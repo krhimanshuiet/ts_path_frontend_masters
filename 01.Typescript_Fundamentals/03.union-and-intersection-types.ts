@@ -52,7 +52,7 @@ console.log(flipCoin());
 const success = [
   "success",
   { name: "Mike North", email: "mike@example.com" },
-] as const;
+] as const
 const fail = ["error", new Error("Something went wrong")] as const;
 
 function maybeGetUserInfo() {
@@ -99,14 +99,14 @@ if (second instanceof Error) {
 // discriminated unions
 
 if (first === "error") {
-  //   second;
+    // second;
 } else {
   console.log(second?.name);
 }
 
 // intersections types
 // what does evens and onethroughfive accepts as values
-type evenAndLowNumber = OneThroughFive & Evens; // -> {2,4}
+type evenAndLowNumber = OneThroughFive & Evens; //{1,2,3,4,5}&{2,4,6,8} -> {2,4}
 
 // evenAndLowNumber = 6; not in OneThroughFive
 // evenAndLowNumber = 3; not in Evens

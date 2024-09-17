@@ -48,7 +48,6 @@ type UserInfoOutcome = UserInfoOutcomeError | UserInfoOutcomeSuccess;
 
 
 // Inheritance in type aliases 
-
 type SpecialDate = Date & {getDescription():string};
 
 const newYearEve:SpecialDate = Object.assign(new Date(),{getDescription:()=>"Last Day of the year"})
@@ -228,3 +227,35 @@ if(typeof val !== "number"){
 
 
 // JSON Type Exercise
+
+type JSONPrmitive = string | number | boolean | null;
+
+type JSONObject = {
+    [key:string]:JSONValue
+}
+
+type JSONArray = JSONValue[]
+
+type JSONValue = JSONPrmitive | JSONArray | JSONObject
+
+// test
+
+function isJSON(arg:JSONValue){};
+
+
+// POSITIVE cases
+
+isJSON("hello")
+isJSON([4,5,6,7,7])
+isJSON(true)
+isJSON(null)
+isJSON({name:"himanshu singh"})
+isJSON(false)
+isJSON({a:{name:"himanshu",b:[1,2,3,4,5,6]}}); // complex object 
+
+// NEGATIVE cases
+
+isJSON(() => "");
+isJSON(class {})
+isJSON(undefined)
+isJSON(BigInt(143))

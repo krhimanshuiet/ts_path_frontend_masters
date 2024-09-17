@@ -9,7 +9,7 @@ const myCar = {
   chargeVoltage: 34,
 };
 
-let car: {
+let car : {
   make: string;
   model: string;
   year: string;
@@ -121,7 +121,7 @@ model1;
 
 // readonly tuples
 
-const numPair: [number, number] = [20, 23]; // valid
+const numPair:[number, number] = [20, 23]; // valid
 
 // const numTriplet:[number,number,number] = [6]  invalid
 
@@ -157,6 +157,11 @@ class Truck {
   year: number;
   towingCapacity: number;
 }
+
+const c = new Truck();
+
+console.log("c",c)
+
 
 const vehicle = {
   make: "Honda",

@@ -1,3 +1,5 @@
+import { DataTypeRegistry } from "../lib/registry";
+
 export class Magzine{
     issueNumber():number{
         return 42;
@@ -9,3 +11,4 @@ declare module "../lib/registry"{
         magazine:Magzine
     }
 }
+
